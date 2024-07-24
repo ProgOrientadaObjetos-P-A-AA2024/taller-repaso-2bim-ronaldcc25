@@ -1,13 +1,14 @@
 package paquete01;
 
-public abstract class Comprador {
+public class Comprador {
     
-    protected String nombre;
-    protected String cedula;
-    protected String marca;
-    protected double precioBase;
-    protected double precioFinal;
-
+    private String nombre;
+    private String cedula;    
+    
+    public Comprador(String n, String c, String m){
+    
+    }
+    
     public void establecerNombre(String n) {
         nombre = n;
     }
@@ -19,13 +20,7 @@ public abstract class Comprador {
     public void establecerMarca(String m) {
         marca = m;
     }
-
-    public void establecerPrecioBase(double p) {
-        precioBase = p;
-    }
-
-    public abstract void calcularPrecioFinal();    
-
+    
     public String obtenerNombre() {
         return nombre;
     }
@@ -37,14 +32,4 @@ public abstract class Comprador {
     public String obtenerMarca() {
         return marca;
     }
-
-    public double obtenerPrecioBase() {
-        return precioBase;
-    }
-
-    public double obtenerPrecioFinal() {
-        return precioFinal;
-    }
-    
-    
 }

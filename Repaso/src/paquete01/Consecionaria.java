@@ -1,4 +1,4 @@
-package paquete03;
+package paquete01;
 
 public class Consecionaria {
     

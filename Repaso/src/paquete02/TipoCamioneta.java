@@ -1,14 +1,20 @@
 package paquete02;
 
+import paquete01.Auto;
 import paquete01.Comprador;
 
-public class TipoCamioneta extends Comprador{
+public class TipoCamioneta extends Auto{
     
     private Comprador propietario;
     private int porcentajeAdicionalFijo;
     private double valorAdicionalFijo;
     private double seguroMantenimiento;
 
+    public TipoCamioneta(Comprador c, String m, double p, int pF) {
+        super(c, m, p);
+        porcentajeAdicionalFijo = pF;
+    }
+    
     public void establecerPropietario(Comprador p) {
         propietario = p;
     }
@@ -34,10 +40,6 @@ public class TipoCamioneta extends Comprador{
         precioFinal = precioBase + valorAdicionalFijo + seguroMantenimiento;
     }
 
-    public Comprador obtenerPropietario() {
-        return propietario;
-    }
-
     public int obtenerProcentajeAdicionalFijo() {
         return porcentajeAdicionalFijo;
     }
@@ -50,6 +52,8 @@ public class TipoCamioneta extends Comprador{
         return seguroMantenimiento;
     }
 
-    
+    public Comprador obtenerPropietario() {
+        return propietario;
+    }
     
 }

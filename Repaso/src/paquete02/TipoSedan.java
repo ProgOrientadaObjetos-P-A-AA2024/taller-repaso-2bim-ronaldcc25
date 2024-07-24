@@ -1,14 +1,25 @@
 package paquete02;
 
+import paquete01.Auto;
 import paquete01.Comprador;
 
-public class TipoSedan extends Comprador{
+public class TipoSedan extends Auto{
     
-    private double porcentajeDescuento;
+    private Comprador propietario;
+    private int porcentajeDescuento;
     private double valorDescuento;
     private double seguroMecanico;
 
-    public void establecerProcentajeDescuento(double p) {
+    public TipoSedan(Comprador c, String m, double p, int pD) {
+        super(c, m, p);
+        porcentajeDescuento = pD;
+    }
+    
+    public void establecerPropietario(Comprador p) {
+        propietario = p;
+    }
+
+    public void establecerProcentajeDescuento(int p) {
         porcentajeDescuento = p;
     }
 
@@ -25,7 +36,7 @@ public class TipoSedan extends Comprador{
         precioFinal = (precioBase - valorDescuento) + seguroMecanico;
     }
 
-    public double obtenerProcentajeDescuento() {
+    public int obtenerProcentajeDescuento() {
         return porcentajeDescuento;
     }
 
@@ -35,6 +46,10 @@ public class TipoSedan extends Comprador{
 
     public double obtenerSeguroMecanico() {
         return seguroMecanico;
+    }
+    
+    public Comprador obtenerPropietario() {
+        return propietario;
     }
     
 }
